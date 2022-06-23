@@ -1,6 +1,8 @@
 import {gql, useQuery} from "@apollo/client";
 import {useEffect} from "react"
+import {Event} from "./pages/Event";
 import {client} from "./lib/apollo";
+
 
 const GET_LESSONS_QUERY = gql `
     query{
@@ -26,15 +28,9 @@ function App() {
             console.log(response.data)
         })
     }, []); */
-    return (<ul> {
-        data ?. lessons.map(lesson => {
-            return <li key={
-                lesson.id
-            }> {
-                lesson.title
-            }</li>
-    })
-    } </ul>)
+    return (<div>
+        <Event/>
+    </div>);
 }
 
 export default App
