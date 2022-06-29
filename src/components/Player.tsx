@@ -1,4 +1,4 @@
-import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
+import { CaretRight, CircleNotch, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 import {DefaultUi, Player as Video, Youtube} from "@vime/react";
 import "@vime/core/themes/default.css"
 import { useGetLessonBySlugQuery } from "../graphql/generated";
@@ -16,8 +16,10 @@ export function Player(props:PlayerProps) {
 
     if(!data ||!data.lesson){
         return (
-            <div className="flex-1">
-                <p>Carregando...</p>
+            <div className="flex-1">                
+                <span className="flex mt-60 justify-center animate-spin">
+                    <CircleNotch size={40}/>
+                </span>
             </div>
         )
     }
